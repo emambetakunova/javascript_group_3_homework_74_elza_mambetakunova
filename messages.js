@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     fs.readdir(path, (err, files) => {
         let messages = [];
-        files = files.slice(-5);
+        files = files.slice(1, 6);
         files.forEach(file => {
             const fileText = fs.readFileSync(path + '/' + file);
             messages.push(JSON.parse(fileText));
